@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dating Time</title>
+  <style>
+    fieldset {
+      background: lightyellow;
+      border: 10px solid yellow;
+      margin-top: 10px;
+      width: 720px;
+    }
+    label {
+      width: 180px;
+      display: inline-block;
+      text-align: right;
+    }
+    .range_info {
+      text-align: center;
+    }
+    textarea {
+      width: 360px;
+      height: 50px;
+    }
+    .labelbox {
+      width: auto;
+    }
+    label:hover {
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Please Enter Your Details For Our Dating Website!</h2>
+  <form method="post" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Your Face</legend>
+      <label for="image">Your image:</label>
+      <input type="file" name="image" /><br />
+      <label for="preview">Your preview:</label>
+      <img id="preview" name="preview" />
+    </fieldset>
+    <fieldset>
+      <legend>Your general details</legend>
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="Your full name" required /><br />
+      <label class="labelbox" for="gender">Gender:</label>
+      <input type="radio" name="gender" value="male" required /> Male
+      <input type="radio" name="gender" value="female" required />Female<br />
+      <label for="age">Age:</label>
+      <input type="number" name="age" /><br />
+      <label for="birth">Date of birth:</label>
+      <input type="date" name="birth" /><br />
+      <label for="favoriteColor">Favorite Color:</label>
+      <input type="color" name="favoriteColor" /><br />
+      <label for="country">Which Country:</label>
+      <select name="country">
+        <option>Brasil</option>
+        <option>EUA</option>
+        <option>Mexico</option>
+        <option>Chile</option>
+        <option>Irlanda</option>
+        <option>Alemanha</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Your indicators</legend>
+      <label for="height">Height:</label>
+      <span class="range_info">Short</span><input type="range" name="height" min="0" max="100" /><span class="range_info">Tall</span><br />
+      <label for="salary">Salary:</label>
+      <span class="range_info">Poor</span><input type="range" name="salary" min="0" max="100" /><span class="range_info">Rich</span>
+    </fieldset>
+    <fieldset>
+      <legend>Your Contact Information</legend>
+      <label for="email">Email:</label>
+      <input type="email" name="email" required /><br />
+      <label for="email">Mobile:</label>
+      <input type="tel" name="mobile" /><br />
+      <label for="address">Address</label>
+      <textarea name="address">
+      </textarea><br />
+      <label class="labelbox" for="methodContact">Address</label>
+      <input type="checkbox" name="methodContact" />E-mail
+      <input type="checkbox" name="methodContact" />WhatApp
+      <input type="checkbox" name="methodContact" />In-app chat
+    </fieldset>
+    <input type="submit" />
+  </form>
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+</html>
