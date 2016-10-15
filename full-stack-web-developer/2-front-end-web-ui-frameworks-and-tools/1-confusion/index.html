@@ -87,7 +87,51 @@
 							<button type="submit" class="btn btn-info">Sign in</button>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div id="reserveModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Reserve Table</h4>
+					</div>
+					<div class="modal-body">
+						<form id="form-reserve-table" class="form-horizontal">
+							<div class="form-group">
+								<label for="section" class="col-sm-2 control-label">Section</label>
+								<div class="col-sm-7">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-success active">
+											<input type="radio" name="section" id="section-non-smoking" autocomplete="off" checked> Non-Smoking
+										</label>
+										<label class="btn btn-danger">
+											<input type="radio" name="section" id="section-smoking" autocomplete="off"> Smoking
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="guestNumber" class="col-xs-12 col-sm-2 control-label">Number of Guests</label>
+								<p style="padding-top: 5px;"></p>
+								<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="1"> 1</span>
+								<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="2"> 2</span>
+								<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="3"> 3</span>
+								<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="4"> 4</span>
+								<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="5"> 5</span>
+							</div>
+							<div class="form-group">
+								<button type="text" class="btn btn-primary col-sm-offset-1">Reserve</button>
+								<button type="text" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							</div>
+							<div class="alert alert-warning alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<strong>Warning:</strong> Please <strong><a style="text-decoration: none; color: #6a5d3b">call</a></strong> us to reserve for more than six guests.
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -110,7 +154,7 @@
 					<div class="col-xs-12 col-sm-2">
 						<div class="form-group">
 							<p style="padding:37px;"></p>
-							<a type="button" href="#form-reserve-table" class="btn btn-warning btn-block" data-toggle="tooltip" title="Or Call at +852 12345678" data-placement="bottom">Reserve Table</a>
+							<a href="#form-reserve-table" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
 						</div>
 					</div>
 				</div>
@@ -137,6 +181,7 @@
 									cherry tomatoes, Vidalia onion, Guntur chillies and
 									Buffalo Paneer.</p>
 									<p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+									<p style="padding:13px;"></p>
 								</div>
 							</div>
 							<div class="item">
@@ -148,6 +193,7 @@
 									five choicest desserts. Free flowing bubbly and soft drinks. All for
 									just $19.99 per person </p>
 									<p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+									<p style="padding:13px;"></p>
 								</div>
 							</div>
 							<div class="item">
@@ -161,6 +207,7 @@
 									creating mouthwatering Indo-Italian fusion experiences.
 									</p>
 									<p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+									<p style="padding:13px;"></p>
 								</div>
 							</div>
 						</div>
@@ -253,43 +300,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="row row-content">
-				<div class="col-xs-12 col-sm-3">
-					<p style="padding-top: 50px;"></p>
-					<h2>Reserve a Table</h2>
-				</div>
-				<div class="col-xs-12 col-sm-9">
-					<form id="form-reserve-table" class="form-horizontal">
-						<div class="form-group">
-							<label for="guestNumber" class="col-xs-12 col-sm-2 control-label">Number of Guests</label>
-							<p style="padding-top: 5px;"></p>
-							<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="1"> 1</span>
-							<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="2"> 2</span>
-							<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="3"> 3</span>
-							<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="4"> 4</span>
-							<span style="padding-right: 20px;"><input id="guestNumber" type="radio" name="guests" value="5"> 5</span>
-						</div>
-						<div class="form-group">
-							<label for="timestamp" class="col-xs-12 col-sm-2 control-label">Date and time</label>
-							<div id="timestamp" class="col-xs-12 col-sm-3">
-								<input type="text" class="form-control" placeholder="Date">
-								<i class="glyphicon glyphicon-calendar form-control-feedback" style="margin-right: 15px;"></i>
-							</div>
-							<div class="col-xs-12 col-sm-3">
-								<input type="text" class="form-control" placeholder="Time">
-								<i class="glyphicon glyphicon-time form-control-feedback" style="margin-right: 15px;"></i>
-							</div>
-						</div>
-						<div class="form-group">
-							<button type="text" class="btn btn-primary col-sm-offset-2">Reserve</button>
-						</div>
-						<div class="alert alert-warning alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<strong>Warning:</strong> Please <strong><a style="text-decoration: none; color: #6a5d3b">call</a></strong> us to reserve for more than six guests.
-						</div>
-					</form>
-				</div>
-			</div>
 		</div>
 
 		<footer>
@@ -337,10 +347,5 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script>
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
-		</script>
 	</body>
 </html>
