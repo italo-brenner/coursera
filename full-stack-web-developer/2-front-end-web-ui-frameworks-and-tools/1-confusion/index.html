@@ -5,9 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Ristorante Con Fusion</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
-		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/bootstrap-social.css" rel="stylesheet">
 		<link href="css/mystyles.css" rel="stylesheet" />
 		<!--[if lt IE 9]>
@@ -52,7 +52,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a data-toggle="modal" data-target="#loginModal">
+							<a id="login-link">
 								<span class="glyphicon glyphicon-log-in"></span> Login
 							</a>
 						</li>
@@ -154,7 +154,7 @@
 					<div class="col-xs-12 col-sm-2">
 						<div class="form-group">
 							<p style="padding:37px;"></p>
-							<a href="#form-reserve-table" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+							<a id="reserve-link" class="btn btn-warning btn-block">Reserve Table</a>
 						</div>
 					</div>
 				</div>
@@ -219,6 +219,14 @@
 							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 						</a>
+						<div class="btn-group" id="carouselButtons">
+							<button class="btn btn-danger btn-xs" id="carousel-pause">
+								<span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+							</button>
+							<button class="btn btn-danger btn-xs" id="carousel-play">
+								<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -345,7 +353,25 @@
 		</footer>
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script>
+$(document).ready(function(){
+	$("#mycarousel").carousel( { interval: 2000 } );
+	$("#carousel-pause").click(function(){
+		$("#mycarousel").carousel('pause');
+	});
+	$("#carousel-play").click(function(){
+		$("#mycarousel").carousel('cycle');
+	});
+});
+$("#login-link").click(function(){
+	$("#loginModal").modal('show');
+});
+$("#reserve-link").click(function(){
+	$("#reserveModal").modal('show');
+});
+		</script>
 	</body>
 </html>
