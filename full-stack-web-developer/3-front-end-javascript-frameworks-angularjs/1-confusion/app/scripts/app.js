@@ -49,8 +49,8 @@ angular.module('confusionApp', ['ui.router'])
 				url : 'menu/:id',
 				views : {
 					'content@' : {
-						templateUrl: 'views/dishdetails.html',
-						controller: 'DishDetailsController'
+						templateUrl: 'views/dishdetail.html',
+						controller: 'DishDetailController'
 					}
 				}
 			});
